@@ -1,4 +1,4 @@
-const cryoto = require("crypto");
+const crypto = require("crypto");
 
 const nickname = "CarryWang";
 const prefixZero4 = 4;
@@ -11,7 +11,7 @@ function findHash(prefixZeros) {
 
   while (true) {
     const hashStr = `${nickname}${nonce}`;
-    const hash = cryoto.createHash("sha256").update(hashStr).digest("hex");
+    const hash = crypto.createHash("sha256").update(hashStr).digest("hex");
 
     if (hash.startsWith("0".repeat(prefixZeros))) {
       const endTime = Date.now();
